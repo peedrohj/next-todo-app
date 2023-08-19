@@ -10,7 +10,7 @@ function Header() {
         <div className="font-bold basis-3/4 ">
           <h1>Header</h1>
         </div>
-        <div className="basis-1/4 flex space-x-4 items-center h-full">
+        <div className="basis-1/4 flex space-x-4 justify-end items-center h-full">
           <Link href="/">
             <Button>Home</Button>
           </Link>
