@@ -1,7 +1,8 @@
 import React from "react";
+import TodosList from "./todosList";
 
 function Todos() {
-  return <main className="p-5">Todos</main>;
+  return <main >Todos</main>;
 }
 
 export default Todos;

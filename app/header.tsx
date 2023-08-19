@@ -9,10 +9,13 @@ function Header() {
           <h1>Header</h1>
         </div>
         <div className="basis-1/4 flex space-x-4">
-          <Link href="/" className="font-bold bg-indigo-500 p-2 rounded">
+          <Link href="/" className="bg-slate-600/50 hover:bg-slate-600/75 p-2 rounded">
             Home
           </Link>
-          <Link href="/todos" className="font-bold bg-indigo-500 p-2 rounded">
+          <Link
+            href="/todos"
+            className="bg-slate-600/50  hover:bg-slate-600/75 p-2 rounded"
+          >
             Todo
           </Link>
         </div>
