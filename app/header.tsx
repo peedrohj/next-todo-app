@@ -1,22 +1,22 @@
 import Link from "next/link";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 function Header() {
   return (
-    <header className="p-5 bg-slate-800">
-      <div className="flex flex-row items-center">
+    <header className="p-5 h-18 drop-shadow border-b ">
+      <div className="flex flex-row items-center h-full">
         <div className="font-bold basis-3/4 ">
           <h1>Header</h1>
         </div>
-        <div className="basis-1/4 flex space-x-4">
-          <Link href="/" className="bg-slate-600/50 hover:bg-slate-600/75 p-2 rounded">
-            Home
+        <div className="basis-1/4 flex space-x-4 items-center h-full">
+          <Link href="/">
+            <Button>Home</Button>
           </Link>
-          <Link
-            href="/todos"
-            className="bg-slate-600/50  hover:bg-slate-600/75 p-2 rounded"
-          >
-            Todo
+          <Separator className="h-12" orientation="vertical" />
+          <Link href="/todos">
+            <Button>Todo</Button>
           </Link>
         </div>
       </div>

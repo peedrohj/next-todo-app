@@ -2,7 +2,7 @@ import React from "react";
 import TodosList from "./todosList";
 
 function Todos() {
-  return <main >Todos</main>;
+  return <main className="text-center pt-2">Chose a todo</main>;
 }
 
 export default Todos;

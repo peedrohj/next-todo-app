@@ -1,6 +1,16 @@
+import { notFound } from "next/navigation";
 import React from "react";
 import { Todo } from "../typings";
-import { notFound } from "next/navigation";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 type PageProps = {
   params: {
     todoId: string;
@@ -15,6 +25,7 @@ const fetchTodo = async (todoId: string) => {
   const todo: Todo = await res.json();
   return todo;
 };
+
 async function TodoPage({ params: { todoId } }: PageProps) {
   const todo = await fetchTodo(todoId);
 
@@ -23,16 +34,18 @@ async function TodoPage({ params: { todoId } }: PageProps) {
   }
 
   return (
-    <div className="p-5 bg-slate-800 shadow-md shadow-slate-700/25">
-      <p className="font-bold">
-        #{todo.id}: {todo.title}
-      </p>
-      <p>Completed: {todo.completed ? "Yes" : "No"}</p>
-
-      <p className="border-t border-white mt-5 pt-5 text-right">
-        By User: {todo.userId}
-      </p>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>{todo.title}</CardTitle>
+        <CardDescription>#{todo.id}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Completed: {todo.completed ? "Yes" : "No"}</p>
+      </CardContent>
+      <CardFooter className="text-xs">
+        <p>Created by {todo.userId}</p>
+      </CardFooter>
+    </Card>
   );
 }
 
